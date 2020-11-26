@@ -18,7 +18,7 @@ const Page = ({ title, children }) => {
       >
         <div>Welcome to Employees App!</div>
       </div>
-      <div className={styles.mainContent}>{children}</div>
+      {children}
     </>
   );
 };

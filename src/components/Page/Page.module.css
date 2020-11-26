@@ -6,8 +6,3 @@
   height: 60px;
   padding: 0 20px;
 }
-
-.mainContent {
-  width: 100%;
-  height: calc(100vh - 60px);
-}

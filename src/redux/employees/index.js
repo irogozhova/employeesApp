@@ -3,9 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const employees = createSlice({
   name: "employees",
   initialState: {
-    data: null,
+    data: [],
     isLoading: false,
     error: null,
+    sort: {
+      field: "name",
+      isAsc: true,
+    },
   },
   reducers: {
     getData(state) {
@@ -19,6 +23,16 @@ const employees = createSlice({
     getDataFailure(state, { errorStatus }) {
       state.isLoading = false;
       state.error = errorStatus;
+    },
+    changeSort(state, { payload }) {
+      if (state.sort.field === payload) {
+        state.sort.isAsc = !state.sort.isAsc;
+      } else {
+        state.sort = {
+          field: payload,
+          isAsc: true,
+        };
+      }
     },
   },
 });
